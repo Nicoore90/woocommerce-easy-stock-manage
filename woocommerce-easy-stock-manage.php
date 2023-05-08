@@ -13,11 +13,18 @@
  * Update URI:        https://github.com/Nicoore90/woocommerce-easy-stock-manage
  * Text Domain:       woocommerce-easy-stock-plugin
  * Domain Path:       /languages
+ * Version:           1.1
  */
 
 add_filter('manage_edit-product_columns', function($columns) {
     $columns['in_stock'] = __( 'En Stock', 'woocommerce' );
 
     return $columns;
+});
+
+add_action('manage_product_posts_custom_column', function($column) {
+    if($column == 'in_stock') {
+        echo( "<input type='checkbox'> </input>");
+    }
 });
 
