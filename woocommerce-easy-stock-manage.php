@@ -15,7 +15,7 @@
  * Domain Path:       /languages
  */
 
-add_filter('manage_edit-product_columns', function() {
+add_filter('manage_edit-product_columns', function($columns) {
     $columns['in_stock'] = __( 'En Stock', 'woocommerce' );
 
     return $columns;
